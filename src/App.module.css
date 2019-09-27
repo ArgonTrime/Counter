@@ -4,6 +4,9 @@
     align-items: center;
     height: 500px;
 }
+.container div {
+    margin: 5px;
+}
 
 
 /* counter css*/

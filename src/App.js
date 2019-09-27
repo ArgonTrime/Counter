@@ -9,8 +9,9 @@ class App extends React.Component {
     state = {
         number: 0,
         maxLimit: 3,
+        maxLimitInput: null,
+        startCountInput: null,
         lowLimit: -3,
-        startCount: null,
         errorMessage: ''
     };
 
@@ -49,8 +50,30 @@ class App extends React.Component {
 
     /* metods for counterSettings*/
     setSettings = () => {
-
+        if (this.state.maxLimitInput !== null) {
+            this.setState({
+                maxLimit: this.state.maxLimitInput,
+                maxLimitInput: null,
+            })
+        }
+        if (this.state.startCountInput !== null) {
+            this.setState({
+                number: this.state.startCountInput,
+                startCountInput: null
+            })
+        }
     };
+    setMax = (e) => {
+        this.setState({
+            maxLimitInput: e.target.value
+        })
+    };
+    setStart = (e) => {
+        this.setState({
+            startCountInput: e.target.value
+        })
+    };
+
 
     render() {
         return (
@@ -63,7 +86,7 @@ class App extends React.Component {
                              returnCount={this.returnCount}
                              number={this.state.number}/>}
 
-                <CounterSettings/>
+                <CounterSettings setSettings={this.setSettings} setMax={this.setMax} setStart={this.setStart}/>
             </div>
         );
     };

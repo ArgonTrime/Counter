@@ -1,11 +1,12 @@
 import React from 'react';
 import s from '../../App.module.css';
 
-const Counter = () => {
+const Counter = (props) => {
     return (
         <div className={s.boxCounter}>
-            <h1>1</h1>
-            <button>Add</button><button>Delete</button>
+            <p>{props.errorMessage}</p>
+            <h1>{props.number}</h1>
+            <button onClick={props.addNumber}>Add</button><button onClick={props.deleteNumber}>Delete</button>
         </div>
     );
 };

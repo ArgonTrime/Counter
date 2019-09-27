@@ -2,11 +2,20 @@
     display: flex;
     justify-content: center;
 }
+
+
+/* counter css*/
 .boxCounter {
     border: 3px solid black;
     border-radius: 10px;
     background-color: white;
 }
+.boxCounter p {
+    margin: 10px;
+}
+
+
+/* settings css*/
 .boxSettings {
     border: 3px solid black;
     border-radius: 10px;

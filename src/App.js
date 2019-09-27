@@ -2,6 +2,7 @@ import React from 'react';
 import s from './App.module.css';
 import Counter from "./component/counter/Counter";
 import CounterSettings from "./component/counterSettings/CounterSettings";
+import Error from "./component/error/Error";
 
 class App extends React.Component {
 
@@ -38,12 +39,29 @@ class App extends React.Component {
         }
     };
 
+    returnCount = () => {
+        this.setState({
+            errorMessage: ''
+        })
+    };
+
+
+    /* metods for counterSettings*/
+    setSettings = () => {
+
+    };
+
     render() {
         return (
             <div className={s.container}>
-                <Counter number={this.state.number}
-                         addNumber={this.addNumber}
-                         deleteNumber={this.deleteNumber} errorMessage={this.state.errorMessage}/>
+                {this.state.errorMessage === ''
+                ? <Counter number={this.state.number}
+                    addNumber={this.addNumber}
+                    deleteNumber={this.deleteNumber} />
+                    : <Error errorMessage={this.state.errorMessage}
+                             returnCount={this.returnCount}
+                             number={this.state.number}/>}
+
                 <CounterSettings/>
             </div>
         );

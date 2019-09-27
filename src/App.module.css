@@ -1,6 +1,8 @@
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 500px;
 }
 
 
@@ -9,9 +11,19 @@
     border: 3px solid black;
     border-radius: 10px;
     background-color: white;
+    text-align: center;
+
 }
 .boxCounter p {
     margin: 10px;
+}
+.addBtn {
+    background-color: green;
+    color: white;
+}
+.deleteBtn {
+    background-color: darkred;
+    color: white;
 }
 
 
@@ -20,4 +32,16 @@
     border: 3px solid black;
     border-radius: 10px;
     background-color: white;
+}
+
+/* error css*/
+.boxError {
+    border: 3px solid darkred;
+    border-radius: 10px;
+    background-color: white;
+    color: darkred;
+}
+.boxError button {
+    background-color: darkred;
+    color: white;
 }

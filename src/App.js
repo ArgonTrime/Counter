@@ -14,6 +14,7 @@ class App extends React.Component {
         errorMessage: ''
     };
 
+    /* metods for Counter, Error*/
     addNumber = () => {
         if (this.state.number < this.state.maxLimit) {
             this.setState({

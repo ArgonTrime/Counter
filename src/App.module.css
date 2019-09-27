@@ -19,11 +19,9 @@
 }
 .addBtn {
     background-color: green;
-    color: white;
 }
 .deleteBtn {
     background-color: darkred;
-    color: white;
 }
 
 
@@ -32,6 +30,9 @@
     border: 3px solid black;
     border-radius: 10px;
     background-color: white;
+}
+.setBtn {
+    background-color: grey;
 }
 
 /* error css*/
@@ -43,5 +44,4 @@
 }
 .boxError button {
     background-color: darkred;
-    color: white;
 }

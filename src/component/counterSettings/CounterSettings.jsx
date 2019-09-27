@@ -8,7 +8,7 @@ const CounterSettings = () => {
             <div>CounterSettings</div>
             <div><input type='number'/>Set maximum value</div>
             <div><input type='number'/>Set starting value</div>
-            <button>Set settings</button>
+            <button className={s.setBtn}>Set settings</button>
         </div>
     );
 };

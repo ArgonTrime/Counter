@@ -7,6 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: grey;
 }
+button {
+  outline: none;
+  margin: 1px;
+  border-radius: 5px;
+  color: white;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

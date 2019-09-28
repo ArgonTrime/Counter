@@ -34,6 +34,9 @@
     border-radius: 10px;
     background-color: white;
 }
+.boxSettings input {
+    margin: 0 5px;
+}
 .setBtn {
     background-color: grey;
 }
@@ -47,4 +50,7 @@
 }
 .boxError button {
     background-color: darkred;
+}
+.focus {
+    opacity: 10%;
 }

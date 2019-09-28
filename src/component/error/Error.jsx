@@ -4,7 +4,7 @@ import s from '../../App.module.css';
 const Error = (props) => {
     return (
         <div className={s.boxError}>
-            <p>{props.errorMessage} = {props.number}</p>
+            <p>{props.errorMessage}</p>
             <button onClick={props.returnCount}>Return</button>
         </div>
     );

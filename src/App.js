@@ -12,6 +12,7 @@ class App extends React.Component {
         maxLimitInput: null,
         startCountInput: null,
         lowLimit: -3,
+        lowLimitInput: null,
         errorMessage: ''
     };
 
@@ -19,53 +20,87 @@ class App extends React.Component {
     addNumber = () => {
         if (this.state.number < this.state.maxLimit) {
             this.setState({
-                number: this.state.number + 1,
+                number: ++this.state.number,
                 errorMessage: ''
             })
         } else {
             this.setState({
-                errorMessage: 'Max limit count'
+                errorMessage: `Max limit count ${this.state.maxLimit}`
             })
         }
     };
     deleteNumber = () => {
         if (this.state.number > this.state.lowLimit) {
             this.setState({
-                number: this.state.number - 1,
+                number: --this.state.number,
                 errorMessage: ''
             })
         } else {
             this.setState({
-                errorMessage: 'Max low limit count'
+                errorMessage: `Max low limit count ${this.state.lowLimit}`
             })
         }
     };
 
     returnCount = () => {
         this.setState({
-            errorMessage: ''
+            errorMessage: '',
+            number: this.state.number
         })
     };
 
 
     /* metods for counterSettings*/
     setSettings = () => {
-        if (this.state.maxLimitInput !== null) {
+        if (this.state.maxLimitInput > this.state.lowLimitInput) {
+            if (this.state.maxLimitInput !== null) {
+                this.setState({
+                    maxLimit: this.state.maxLimitInput,
+                    maxLimitInput: null,
+                })
+            }
+        } else {
             this.setState({
-                maxLimit: this.state.maxLimitInput,
-                maxLimitInput: null,
+                errorMessage: 'Set correct maximum value'
             })
         }
-        if (this.state.startCountInput !== null) {
+
+        if (this.state.lowLimitInput < this.state.maxLimitInput) {
+            if (this.state.lowLimitInput !== null) {
+                this.setState({
+                    lowLimit: this.state.lowLimitInput,
+                    lowLimitInput: null
+                })
+            }
+        } else {
             this.setState({
-                number: this.state.startCountInput,
-                startCountInput: null
+                errorMessage: 'Set correct minimum value'
             })
         }
+
+        if (this.state.startCountInput >= this.state.lowLimitInput && this.state.startCountInput <= this.state.maxLimitInput) {
+            if (this.state.startCountInput !== null) {
+                this.setState({
+                    number: this.state.startCountInput,
+                    startCountInput: null,
+                })
+            }
+        } else {
+            this.setState({
+                errorMessage: 'Set correct start value'
+            })
+        }
+
+
     };
     setMax = (e) => {
         this.setState({
             maxLimitInput: e.target.value
+        })
+    };
+    setLow = (e) => {
+        this.setState({
+            lowLimitInput: e.target.value
         })
     };
     setStart = (e) => {
@@ -73,6 +108,7 @@ class App extends React.Component {
             startCountInput: e.target.value
         })
     };
+
 
 
     render() {
@@ -86,7 +122,10 @@ class App extends React.Component {
                              returnCount={this.returnCount}
                              number={this.state.number}/>}
 
-                <CounterSettings setSettings={this.setSettings} setMax={this.setMax} setStart={this.setStart}/>
+                <CounterSettings setSettings={this.setSettings}
+                                 setMax={this.setMax}
+                                 setStart={this.setStart}
+                                 setLow={this.setLow}/>
             </div>
         );
     };

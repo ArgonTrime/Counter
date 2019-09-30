@@ -7,11 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: grey;
 }
-button {
+button{
+   outline: none;
+   margin: 1px;
+   border-radius: 5px;
+   color: white;
+ }
+button:disabled{
   outline: none;
   margin: 1px;
   border-radius: 5px;
   color: white;
+  opacity: 10%;
 }
 
 code {

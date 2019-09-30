@@ -23,9 +23,16 @@
 }
 .addBtn {
     background-color: green;
+
 }
 .deleteBtn {
     background-color: darkred;
+}
+.active {
+    z-index: 10;
+    border: 1px solid forestgreen;
+    background-color: forestgreen;
+    border-radius: 10px;
 }
 
 
@@ -41,6 +48,9 @@
 .setBtn {
     background-color: grey;
 }
+.setBtnDisabled {
+    opacity: 10%;
+}
 
 /* error css*/
 .boxError {
@@ -54,4 +64,9 @@
 }
 .focus {
     opacity: 10%;
+}
+.inputError {
+    border: 1px solid red;
+    background-color: lightcoral;
+    color: white;
 }
